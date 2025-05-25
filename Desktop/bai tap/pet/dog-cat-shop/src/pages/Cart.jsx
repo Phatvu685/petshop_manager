@@ -25,14 +25,14 @@ function CheckoutForm({ cart, products, user, placeOrder }) {
     const shipping = total > 50 ? 0 : 5;
 
     try {
-      // Giả lập thanh toán thành công
+  
       placeOrder(
         {
           user_id: user.id,
           total_amount: total + shipping,
           shipping_address: e.target.address.value,
           phone: e.target.phone.value,
-          payment_method: 'Cash', // Hoặc bất kỳ phương thức giả lập
+          payment_method: 'Cash', 
           status: 'paid',
         },
         userCart
@@ -80,7 +80,7 @@ function Cart({ cart, updateCart, products, user, placeOrder }) {
     updateCart(updatedCart);
   };
 
-  // Fix: show cart items for guest (user_id=1) if user not logged in
+  
   const userCart = user ? cart.filter((c) => c.user_id === user.id) : cart.filter((c) => c.user_id === 1);
 
   const total = userCart.reduce(

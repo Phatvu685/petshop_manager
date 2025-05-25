@@ -25,7 +25,7 @@ function ProductDetail({ addToCart }) {
       <div className="container">
         <h2 className="main-title">{product.name}</h2>
         <div style={{ display: 'flex', gap: '2rem' }}>
-          {/* Thêm tiền tố /image/ để hiển thị đúng hình ảnh từ backend */}
+
           <img src={'/image/' + product.image} alt={product.name} style={{ width: '300px', borderRadius: '8px' }} />
           <div>
             <p className="card-price">${product.price}</p>

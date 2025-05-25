@@ -111,9 +111,9 @@ function App() {
     setCart([]);
   };
 
-  // Thêm hàm placeOrder để cập nhật orders và xóa giỏ hàng của user
+
   const placeOrder = (orderDetails, userCart) => {
-    // Thêm đơn hàng mới vào orders
+  
     setOrders((prevOrders) => [
       ...prevOrders,
       {
@@ -132,7 +132,7 @@ function App() {
       },
     ]);
 
-    // Xóa các sản phẩm trong giỏ hàng của user
+
     setCart((prevCart) =>
       prevCart.filter((item) => item.user_id !== orderDetails.user_id)
     );

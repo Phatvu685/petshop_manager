@@ -46,7 +46,7 @@ function Products({ addToCart }) {
       (searchQuery === '' || product.title.toLowerCase().includes(searchQuery.toLowerCase()))
     );
   })
-  // Lọc bỏ 2 sản phẩm "thức ăn cho chó" và "đồ chơi cho mèo"
+ 
   .filter(product => product.title !== 'thức ăn cho chó' && product.title !== 'đồ chơi cho mèo');
 
   return (
@@ -83,18 +83,21 @@ function Products({ addToCart }) {
           </select>
         </div>
         <div className="grid">
-          {filteredProducts.map((product) => (
-            <Card
-              key={product.id}
-              title={product.title}
-              image={product.image}
-              price={`$${product.price}`}
-              addToCart={addToCart}
-              isProduct={true}
-              id={product.id}
-              product={product} // Truyền prop product đầy đủ
-            />
-          ))}
+          {filteredProducts.map((product) => {
+            console.log('Product name:', product.name);
+            return (
+              <Card
+                key={product.id}
+                title={product.name}
+                image={product.image}
+                price={`$${product.price}`}
+                addToCart={addToCart}
+                isProduct={true}
+                id={product.id}
+                product={product}
+              />
+            );
+          })}
         </div>
       </div>
     </main>

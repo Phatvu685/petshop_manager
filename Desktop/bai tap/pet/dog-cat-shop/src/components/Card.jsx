@@ -5,7 +5,7 @@ function Card({ title, image, price, addToCart, isProduct, id, product }) {
   return (
     <div className="card">
       <img src={image} alt={title} className="card-image" />
-      <h3 className="card-title">{title}</h3>
+      <h3 className="card-title" title={title} style={{ fontWeight: 'bold', cursor: 'default' }}>{title}</h3>
       <p className="card-price">{price}</p>
       {isProduct ? (
         <React.Fragment>

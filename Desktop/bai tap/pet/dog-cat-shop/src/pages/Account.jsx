@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 function Account({ user, orders, products, deleteOrder }) {
   if (!user) return <div>Please <Link to="/login">login</Link> to view your account.</div>;
 
-  // Lọc đơn hàng của user hiện tại và chỉ lấy đơn hàng đã thanh toán
+ 
   const userOrders = orders.filter(order => order.user_id === user.id && order.status === 'paid');
 
-  // Hàm lấy thông tin sản phẩm theo product_id
+
   const getProductInfo = (productId) => {
     return products.find(product => product.id === productId);
   };
